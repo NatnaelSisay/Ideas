@@ -1,0 +1,15 @@
+.form-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.controllers {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.form-control {
+	flex: 1;
+	font-size: 20px;
+}

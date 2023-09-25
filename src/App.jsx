@@ -130,6 +130,16 @@ function App() {
 					</div>
 				</div>
 			</main>
+			<div className="container center">
+				<a
+					className="link"
+					target="_blank"
+					rel="noreferrer"
+					href="https://www.linkedin.com/in/natnael-kagnaw/"
+				>
+					Natnael Kagnaw - LinkedIn
+				</a>
+			</div>
 		</>
 	);
 }

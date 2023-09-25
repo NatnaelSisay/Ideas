@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import "./index.css";
+
 const Filter = ({ setData, submit }) => {
 	const types = [
 		"education",

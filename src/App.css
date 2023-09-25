@@ -12,6 +12,10 @@ body {
 	color: white;
 }
 
+a {
+	color: inherit;
+}
+
 .header {
 	padding: 0.5rem;
 	text-align: center;
@@ -28,6 +32,20 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 2em;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
 }
 
 .content__message {
@@ -49,38 +67,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
-}
-
-.btn {
-	width: 100%;
-	padding: 0.5em;
-	border: 0;
-	border-radius: 10px;
-	background-color: #3f525c;
-
-	font-size: 24px;
-	color: white;
-	font-weight: bold;
-}
-
-.toggle {
-	margin-bottom: 0.5em;
-}
-
-.form-group {
-	display: flex;
-	justify-content: space-between;
-}
-
-.controllers {
-	min-width: 100%;
-	padding: 0;
-	margin: 0;
-	display: block;
-}
-
-.form-control {
-	flex: 1;
 }
 
 @media (min-width: 700px) {

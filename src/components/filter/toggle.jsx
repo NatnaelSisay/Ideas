@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./toggle.css";
 
 const Toggle = ({ value, toggle }) => {
 	const handleToggle = () => {
