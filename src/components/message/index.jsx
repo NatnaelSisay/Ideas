@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
+
+import "./index.css";
+
 const Message = ({ data }) => {
-	return <p>{data.activity}</p>;
+	return (
+		<div>
+			{data.error && <p className="error">{data.error}</p>}
+			{!data.error && <p className="activity">{data.activity}</p>}
+		</div>
+	);
 };
 
 Message.propTypes = {
@@ -12,6 +20,7 @@ Message.propTypes = {
 		price: PropTypes.number,
 		link: PropTypes.string,
 		key: PropTypes.string,
+		error: PropTypes.string,
 	}),
 };
 

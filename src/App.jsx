@@ -1,9 +1,12 @@
-import { useEffect, useReducer, useRef, useState } from "react";
-import "./App.css";
+import { useReducer, useState } from "react";
+
 import Button from "./components/button";
 import Filter from "./components/filter";
 import Toggle from "./components/filter/toggle";
 import Message from "./components/message";
+import axios from "axios";
+
+import "./App.css";
 
 const BASE_API = "http://www.boredapi.com/api/activity/";
 
@@ -56,7 +59,6 @@ function App() {
 		e.preventDefault();
 		let finalUrl = "";
 		if (showFilter) {
-			console.log(formData);
 			const { type, participants, accessibility, price } = formData;
 			const result = `?type=${type}&participants=${participants}&accessibility=${
 				accessibility / 10
@@ -69,11 +71,15 @@ function App() {
 		handleSearch(finalUrl);
 	};
 
-	const handleSearch = (finalUrl) => {
+	const handleSearch = async (finalUrl) => {
 		dispatchMessage({ type: "FETCH_INIT" });
+		try {
+			const result = await axios.get(finalUrl);
+			dispatchMessage({ type: "FETCH_SUCCESS", payload: result.data });
+		} catch {
+			dispatchMessage({ type: "FETCH_ERROR" });
+		}
 	};
-
-	useEffect(() => {}, [showFilter, url, formData]);
 
 	return (
 		<>

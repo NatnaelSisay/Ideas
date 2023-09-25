@@ -23,7 +23,6 @@ const Filter = ({ setData, submit }) => {
 
 	useEffect(() => {
 		const data = { type, accessibility, participants, price };
-		console.log("form data", data);
 		setData(data);
 	}, [type, accessibility, participants, price]);
 
