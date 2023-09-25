@@ -17,7 +17,7 @@ const initialState = {
 	participants: 1,
 	price: 0.1,
 	link: "https://expressjs.com/",
-	key: "3943506",
+	key: "0",
 };
 
 const initialQuery = {
@@ -30,7 +30,7 @@ const initialQuery = {
 const useFetchReducer = (state, action) => {
 	switch (action.type) {
 		case "FETCH_INIT":
-			return { ...state, isLoading: true, isEror: false };
+			return { ...state, isLoading: true, isError: false };
 		case "FETCH_ERROR":
 			return { ...state, isLoading: false, isError: true };
 		case "FETCH_SUCCESS":
@@ -38,7 +38,16 @@ const useFetchReducer = (state, action) => {
 				...state,
 				data: action.payload,
 				isLoading: false,
-				isEror: false,
+				isError: false,
+			};
+		case "NOTHING_NEW":
+			return {
+				...state,
+				isLoading: false,
+				isError: false,
+				data: {
+					error: "Nothing New In this category or You have visited everything",
+				},
 			};
 		default:
 			return;
@@ -47,7 +56,7 @@ const useFetchReducer = (state, action) => {
 
 function App() {
 	const [showFilter, setShowFilter] = useState(false);
-	const [url, setUrl] = useState(BASE_API);
+	const [visited, setVisited] = useState([]);
 	const [formData, setFormData] = useState(initialQuery);
 	const [message, dispatchMessage] = useReducer(useFetchReducer, {
 		data: initialState,
@@ -74,7 +83,19 @@ function App() {
 	const handleSearch = async (finalUrl) => {
 		dispatchMessage({ type: "FETCH_INIT" });
 		try {
-			const result = await axios.get(finalUrl);
+			let trials = 0;
+			let result = await axios.get(finalUrl);
+
+			while (visited.includes(result.data.key) && trials < 10) {
+				result = await axios.get(finalUrl);
+				trials++;
+			}
+
+			if (visited.includes(result.data.key)) {
+				return dispatchMessage({ type: "NOTHING_NEW", payload: result.data });
+			}
+
+			setVisited([...visited, result.data.key]);
 			dispatchMessage({ type: "FETCH_SUCCESS", payload: result.data });
 		} catch {
 			dispatchMessage({ type: "FETCH_ERROR" });
