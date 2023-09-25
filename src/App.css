@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-	max-width: 900px;
+	max-width: 1200px;
 	width: 90%;
 	margin: auto;
 }
@@ -31,6 +31,7 @@ body {
 }
 
 .content__message {
+	width: 100%;
 	margin: 1em 0 1em;
 
 	background-color: var(--clr-bg-400);
@@ -89,11 +90,13 @@ body {
 	}
 
 	.content__message {
+		min-width: 300px;
 		order: 1;
 		flex: 1;
 	}
 
 	.content__controler {
+		min-width: 300px;
 		flex: 1;
 	}
 
