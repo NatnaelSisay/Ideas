@@ -1,18 +1,6 @@
-const Filter = () => {
+const Filter = ({ filterInfo, submit }) => {
 	return (
-		<form>
-			<div className="toggle">
-				<label htmlFor="options">
-					<input
-						type="checkbox"
-						name="options"
-						id="options"
-						defaultChecked={false}
-					/>{" "}
-					Customize
-				</label>
-			</div>
-
+		<form onSubmit={submit} ref={filterInfo}>
 			<div className="controllers">
 				<div className="form-group">
 					<label htmlFor="type">Type:</label>
