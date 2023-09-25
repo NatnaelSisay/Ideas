@@ -10,6 +10,8 @@ import "./App.css";
 
 const BASE_API = "https://www.boredapi.com/api/activity/";
 
+document.title = "Don't Get Bored";
+
 const initialState = {
 	activity: "Welcome",
 	accessibility: 0.25,
