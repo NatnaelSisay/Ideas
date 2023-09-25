@@ -8,10 +8,10 @@ import axios from "axios";
 
 import "./App.css";
 
-const BASE_API = "http://www.boredapi.com/api/activity/";
+const BASE_API = "https://www.boredapi.com/api/activity/";
 
 const initialState = {
-	activity: "Learn Express.js",
+	activity: "Welcome",
 	accessibility: 0.25,
 	type: "education",
 	participants: 1,
