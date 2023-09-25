@@ -60,7 +60,7 @@ function App() {
 		let finalUrl = "";
 		if (showFilter) {
 			const { type, participants, accessibility, price } = formData;
-			const result = `?type=${type}&participants=${participants}&accessibility=${
+			const result = `type=${type}&participants=${participants}&accessibility=${
 				accessibility / 10
 			}&price=${price / 10}`;
 			finalUrl = `${BASE_API}?${result}`;

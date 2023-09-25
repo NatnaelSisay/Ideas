@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
 
 const Filter = ({ setData, submit }) => {
+	const types = [
+		"education",
+		"recreational",
+		"social",
+		"diy",
+		"charity",
+		"cooking",
+		"relaxation",
+		"music",
+		"busywork",
+	];
+
 	const [type, setType] = useState("education");
 	const [accessibility, setAccessibility] = useState(0);
 	const [participants, setParticipants] = useState(1);
@@ -37,8 +49,11 @@ const Filter = ({ setData, submit }) => {
 						value={type}
 						onChange={handleStateChange}
 					>
-						<option value="education">Education</option>
-						<option value="recreational">Recreational</option>
+						{types.map((t) => (
+							<option key={t} value={t}>
+								{t}
+							</option>
+						))}
 					</select>
 				</div>
 
