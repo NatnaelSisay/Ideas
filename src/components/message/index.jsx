@@ -3,10 +3,30 @@ import PropTypes from "prop-types";
 import "./index.css";
 
 const Message = ({ data }) => {
+	console.log(data);
 	return (
 		<div>
-			{data.error && <p className="error">{data.error}</p>}
+			{data.error && <ErrorComponent message={data.error} />}
 			{!data.error && <p className="activity">{data.activity}</p>}
+		</div>
+	);
+};
+
+const ErrorComponent = ({ message }) => {
+	console.log("nothing");
+	return (
+		<div>
+			<p>{message}</p>
+
+			<p>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.boredapi.com/contributing"
+				>
+					Contribute
+				</a>
+			</p>
 		</div>
 	);
 };
@@ -21,7 +41,12 @@ Message.propTypes = {
 		link: PropTypes.string,
 		key: PropTypes.string,
 		error: PropTypes.string,
+		nothingNew: PropTypes.string,
 	}),
+};
+
+ErrorComponent.propTypes = {
+	message: PropTypes.string,
 };
 
 export default Message;

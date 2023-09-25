@@ -12,7 +12,7 @@ const Toggle = ({ value, toggle }) => {
 					type="checkbox"
 					name="options"
 					id="options"
-					defaultChecked={false}
+					checked={value}
 					value={value}
 					onChange={handleToggle}
 				/>{" "}
