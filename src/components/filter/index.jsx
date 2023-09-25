@@ -58,7 +58,11 @@ const Filter = ({ setData, submit }) => {
 				</div>
 
 				<div className="form-group">
-					<label className="form-control" htmlFor="accessibility">
+					<label
+						className="form-control"
+						htmlFor="accessibility"
+						title="A factor describing how possible an event is to do with zero being the most accessible"
+					>
 						Accessiblity:
 					</label>
 					<div className="form-group">
@@ -76,7 +80,12 @@ const Filter = ({ setData, submit }) => {
 				</div>
 
 				<div className="form-group">
-					<label htmlFor="participants">Participants:</label>
+					<label
+						htmlFor="participants"
+						title="The number of people that this activity could involve"
+					>
+						Participants:
+					</label>
 					<input
 						type="number"
 						name="participants"
@@ -87,7 +96,12 @@ const Filter = ({ setData, submit }) => {
 				</div>
 
 				<div className="form-group">
-					<label htmlFor="price">Price </label>
+					<label
+						htmlFor="price"
+						title="A factor describing the cost of the event with zero being free"
+					>
+						Price{" "}
+					</label>
 					<div className="form-group">
 						<input
 							type="range"

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./index.css";
 
 const Message = ({ data }) => {
-	console.log(data);
 	return (
 		<div>
 			{data.error && <ErrorComponent message={data.error} />}
@@ -13,7 +12,6 @@ const Message = ({ data }) => {
 };
 
 const ErrorComponent = ({ message }) => {
-	console.log("nothing");
 	return (
 		<div>
 			<p>{message}</p>
