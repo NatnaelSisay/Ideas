@@ -104,41 +104,38 @@ function App() {
 
 	return (
 		<>
-			<header className="header">
-				<h1 className="header__title">Enjoy</h1>
-			</header>
-
-			<main className="content">
-				<div className="container row">
-					<div className="content__message">
-						{message.isError && <p>Error!</p>}
-						{message.isLoading && <p>Loading...</p>}
-
-						{!(message.isLoading || message.isError) && (
-							<Message data={message.data} />
-						)}
+			<div className="bored-card">
+				<main className="content">
+					<div className="container row card">
+						<div className="content__message">
+							{message.isError && <p>Error!</p>}
+							{message.isLoading && <p>Loading...</p>}
+							{!(message.isLoading || message.isError) && (
+								<Message data={message.data} />
+							)}
+						</div>
+						<div className="content__controler">
+							<Toggle value={showFilter} toggle={setShowFilter} />
+							{showFilter && (
+								<Filter submit={handleSubmit} setData={setFormData} />
+							)}
+							<Button type="submit" onClick={handleSubmit}>
+								Explore
+							</Button>
+						</div>
 					</div>
+				</main>
 
-					<div className="content__controler">
-						<Toggle value={showFilter} toggle={setShowFilter} />
-						{showFilter && (
-							<Filter submit={handleSubmit} setData={setFormData} />
-						)}
-						<Button type="submit" onClick={handleSubmit}>
-							Explore
-						</Button>
-					</div>
+				<div className="container center">
+					<a
+						className="link"
+						target="_blank"
+						rel="noreferrer"
+						href="https://www.linkedin.com/in/natnael-kagnaw/"
+					>
+						Natnael Kagnaw - LinkedIn
+					</a>
 				</div>
-			</main>
-			<div className="container center">
-				<a
-					className="link"
-					target="_blank"
-					rel="noreferrer"
-					href="https://www.linkedin.com/in/natnael-kagnaw/"
-				>
-					Natnael Kagnaw - LinkedIn
-				</a>
 			</div>
 		</>
 	);
