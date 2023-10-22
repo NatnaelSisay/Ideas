@@ -2,38 +2,13 @@ import { useEffect, useState } from "react";
 
 import "./index.css";
 
-const Filter = ({ setData, submit }) => {
-	const types = [
-		"education",
-		"recreational",
-		"social",
-		"diy",
-		"charity",
-		"cooking",
-		"relaxation",
-		"music",
-		"busywork",
-	];
+import { ACTIVITY_TYPES } from "../../../constants/api";
 
+const Filter = ({ setData, submit }) => {
 	const [type, setType] = useState("education");
 	const [accessibility, setAccessibility] = useState(0);
 	const [participants, setParticipants] = useState(1);
 	const [price, setPrice] = useState(0);
-
-	const handleStateChange = (e) => {
-		if (e.target.id === "type") {
-			setType(e.target.value);
-		}
-		if (e.target.id === "accessibility") {
-			setAccessibility(e.target.value);
-		}
-		if (e.target.id === "participants") {
-			setParticipants(e.target.value);
-		}
-		if (e.target.id === "price") {
-			setPrice(e.target.value);
-		}
-	};
 
 	useEffect(() => {
 		const data = { type, accessibility, participants, price };
@@ -49,9 +24,9 @@ const Filter = ({ setData, submit }) => {
 						name="type"
 						id="type"
 						value={type}
-						onChange={handleStateChange}
+						onChange={(e) => setType(e.target.value)}
 					>
-						{types.map((t) => (
+						{ACTIVITY_TYPES.map((t) => (
 							<option key={t} value={t}>
 								{t}
 							</option>
@@ -75,7 +50,7 @@ const Filter = ({ setData, submit }) => {
 							min={0}
 							max={10}
 							value={accessibility}
-							onChange={handleStateChange}
+							onChange={(e) => setAccessibility(e.target.value)}
 						/>
 						<span>{accessibility}</span>
 					</div>
@@ -93,7 +68,7 @@ const Filter = ({ setData, submit }) => {
 						name="participants"
 						id="participants"
 						value={participants}
-						onChange={handleStateChange}
+						onChange={(e) => setParticipants(e.target.value)}
 					/>
 				</div>
 
@@ -112,7 +87,7 @@ const Filter = ({ setData, submit }) => {
 							max={10}
 							min={0}
 							value={price}
-							onChange={handleStateChange}
+							onChange={(e) => setPrice(e.target.value)}
 						/>
 						<span>{price}</span>
 					</div>

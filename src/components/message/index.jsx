@@ -6,7 +6,9 @@ const Message = ({ data }) => {
 	return (
 		<div>
 			{data.error && <ErrorComponent message={data.error} />}
-			{!data.error && <p className="activity">{data.activity}</p>}
+			{!data.error && (
+				<p className="activity">{data.activity || <span>Welecome</span>}</p>
+			)}
 		</div>
 	);
 };
