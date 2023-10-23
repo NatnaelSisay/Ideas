@@ -1,4 +1,4 @@
-# Bored
+# Ideas
 
 Get new ideas and make your day brighter.
 [Website](https://when-you-get-bored.netlify.app/)
