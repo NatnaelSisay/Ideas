@@ -1,8 +1,17 @@
-# React + Vite
+# Bored
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Get new ideas and make your day brighter.
+[Website](https://when-you-get-bored.netlify.app/)
 
-Currently, two official plugins are available:
+![Desktop](./images/desktop.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requirement
+
+- Node version 16 or later
+
+## Insturctions
+
+- `git clone https://github.com/NatnaelSisay/AskOnce.git`
+- `cd AskOnce`
+- `npm install`
+- `npm run dev`
