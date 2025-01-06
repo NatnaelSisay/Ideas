@@ -90,8 +90,7 @@ function Home() {
 						target="_blank"
 						rel="noreferrer"
 						href="https://www.linkedin.com/in/natnael-kagnaw/"
-					>
-						Natnael Kagnaw - LinkedIn
+					>Natnael Kagnaw - LinkedIn
 					</a>
 				</div>
 			</div>
